@@ -17,7 +17,7 @@ const GetPatients = () => {
   const patientselector = useSelector(state => state.patient.data)
 
   const getData = async () => {
-    axios.get("http://localhost:8080/getAllPatient")
+    axios.get("http://localhost:8081/getAllPatient")
     .then((res) => dispatch(patientData(res.data))
     )
   }
@@ -63,7 +63,7 @@ const GetPatients = () => {
 
           const deletePatient = (e, r) => {
             e.stopPropagation();
-            axios.delete("http://localhost:8080/deletePatient", {data :r})
+            axios.delete("http://localhost:8081/deletePatient", {data :r})
             .then((res) => {
                 if(res){
                     window.alert("data deleted successfully");

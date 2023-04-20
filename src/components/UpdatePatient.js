@@ -12,7 +12,7 @@ const UpdatePatient = () => {
     event.preventDefault();
     const data = new FormData(event.target);
     const value = Object.fromEntries(data.entries());
-    axios.put("http://localhost:8080/updatePatient", value)
+    axios.put("http://localhost:8081/updatePatient", value)
     .then((res) => {
         if(res)
             window.alert("data updated successfully");

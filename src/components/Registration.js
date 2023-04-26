@@ -10,7 +10,7 @@ const Registration = () => {
     const value = Object.fromEntries(data.entries());
     console.log(value.dob);
     console.log((new Date()-new Date(value.dob))/(365*24*60*60*1000))
-    fetch("http://localhost:8081/savePatient", {method: "POST",
+    fetch("http://kubernetes-alb-982615822.us-east-1.elb.amazonaws.com/savePatient", {method: "POST",
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(value)})
     .then((res) => res.json())

@@ -17,7 +17,7 @@ const GetPatients = () => {
   const patientselector = useSelector(state => state.patient.data)
 
   const getData = async () => {
-    axios.get("http://localhost:8081/getAllPatient")
+    axios.get("http://kubernetes-alb-982615822.us-east-1.elb.amazonaws.com/getAllPatient")
     .then((res) => dispatch(patientData(res.data))
     )
   }
